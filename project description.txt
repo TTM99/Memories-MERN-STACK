@@ -1,0 +1,42 @@
+npm install 
+axios
+- to fetch api data 
+moment
+- to work with time and date
+react-file-base64 
+- to convert images
+redux redux-thunk
+- to do async actions using redux
+
+npm install body-parser cors express mongoose
+
+
+Body parser()
+http://expressjs.com/en/resources/middleware/body-parser.html
+
+limit
+Controls the maximum request body size. If this is a number, then the value specifies the number of bytes; 
+if it is a string, the value is passed to the bytes library for parsing. Defaults to '100kb'.
+
+extended
+The extended option allows to choose between parsing the URL-encoded data with the querystring library (when false) or
+the qs library (when true). The “extended” syntax allows for rich objects and arrays to be encoded into the URL-encoded 
+format, allowing for a JSON-like experience with URL-encoded. For more information, please see the qs library.
+
+provider in redux helps to keep track of the store which is a global state
+and allow us to use the state or store from anywhere in the project
+
+reducer is a function that accepts a state and action and based on the action type
+it does a action or changes a state of the store
+
+action creators are function that create actions
+
+Part-3
+
+client
+jwt-decode
+react-google-login
+
+sever
+bycryptjs
+jsonwebtoken
