@@ -1,55 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { Container, AppBar, Typography, Grow, Grid } from "@mui/material";
-import memories from "./images/memories.png";
-import Posts from "./components/Posts/Posts";
-import Form from "./components/Form/Form";
-import useStyles from "./styles";
-import { useDispatch } from "react-redux";
-import { getPosts } from "./actions/posts";
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import { Container } from "@mui/material";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Auth from "./components/Auth/Auth";
 
 const App = () => {
-  const classes = useStyles();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [dispatch]);
-
   return (
-    <Container>
-      <AppBar className={classes.appBar} position="static" color="inherit">
-        <div className={classes.appBarContents}>
-          <Typography className={classes.heading} variant="h2">
-            Memories
-          </Typography>
-          <img
-            className={classes.image}
-            src={memories}
-            alt="memories"
-            height="60"
-            width="60"
-          />
-        </div>
-      </AppBar>
-      <Grow in>
-        <Container>
-          <Grid
-            className={classes.mainContainer}
-            container
-            justify="space-between"
-            alignItems="stretch"
-            spacing={3}
-          >
-            <Grid item sm={12} lg={7}>
-              <Posts />
-            </Grid>
-            <Grid item sm={12} lg={4}>
-              <Form />
-            </Grid>
-          </Grid>
-        </Container>
-      </Grow>
-    </Container>
+    <BrowserRouter>
+      <Container>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<Auth />} />
+        </Routes>
+      </Container>
+    </BrowserRouter>
   );
 };
 
